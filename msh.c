@@ -67,12 +67,12 @@ int main()
     }
 
     // Now print the tokenized input as a debug check
-    if(token[0] = '\n')
+    if(token[0] == '\n')
     {
       continue;
     }
 
-
+    free( working_root );
   }
   return 0;
 }
