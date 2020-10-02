@@ -87,7 +87,7 @@ int main()
 
       if( see == -1 )
       {
-        printf('a');
+        printf("a");
       }
     }
 
