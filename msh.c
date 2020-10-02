@@ -72,7 +72,7 @@ int main()
 
 
 
-    if(token[0] == '\n')
+    if(&token[0] == '\n')
     {
       continue;
     }
