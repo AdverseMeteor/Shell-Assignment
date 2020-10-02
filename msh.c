@@ -80,7 +80,7 @@ int main()
 
       if( ret == -1 )
       {
-        perror("execl failed: ");
+        printf("%s: Command not found.", token[0]);
       }
     }
 
