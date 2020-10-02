@@ -71,7 +71,7 @@ int main()
     pid_t pid = fork( );
     if( pid == 0 )
     {
-      int ret = execvp( arguments[0], &arguments[0] );
+      int ret = execvp( token[0], &token[0] );
       if( ret == -1 )
       {
         perror("execl failed: ");
