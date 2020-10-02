@@ -62,11 +62,10 @@ int main()
     //replace the !command here
     if(cmd_str[0]=='!')
     {
-      if() //less than 15 commands
+      if(1==2) //less than 15 commands
       {
-        int index=atoi(&token[0][1]);
-        strncpy(working_str, history[index],MAX_COMMAND_SIZE);
-        for()
+        
+        for(1==2)
         {
 
         }
