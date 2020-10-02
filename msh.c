@@ -27,7 +27,6 @@ int main()
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
 
   char* history[15]; //Malloc and zero it out
-  memset(history[0], 0, MAX_COMMAND_SIZE);
   int h_index;
 
   while( 1 )
