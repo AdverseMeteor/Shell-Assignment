@@ -26,7 +26,7 @@ int main()
 
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
 
-  char* history[15]=(char*) malloc(MAX_COMMAND_SIZE); //Malloc and zero it out
+  char* history[15]; //Malloc and zero it out
   memset(history[0], 0, MAX_COMMAND_SIZE);
   int h_index;
 
@@ -62,7 +62,7 @@ int main()
     //replace the !command here
     if(cmd_str[0]=='!')
     {
-      if(atoi(cmd_str[0][1])<15) //less than 15 commands
+      if() //less than 15 commands
       {
         int index=atoi(&token[0][1]);
         strncpy(working_str, history[index],MAX_COMMAND_SIZE);
@@ -77,7 +77,7 @@ int main()
         int index=h_index;//Do the replacement
         for(i=0; i<15; i++)
         {
-          print("%s\n", history[index]);
+          printf("%s\n", history[index]);
           if(index > 14)
           {
             index=0;
