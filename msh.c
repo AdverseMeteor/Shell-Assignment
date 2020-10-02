@@ -26,8 +26,7 @@ int main()
 
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
 
-  char* history[15]; //Malloc and zero it out
-  int h_index;
+  
 
   while( 1 )
   {
@@ -53,7 +52,7 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     //Save History here
-    
+
 
     if(cmd_str[0] == '\n')
     {
