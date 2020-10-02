@@ -80,6 +80,11 @@ int main()
       break;
     }
 
+    if(strcmp(token[0],"cd")==0)
+    {
+      chdir(token[1]);
+    }
+
     pid_t pid = fork( );
     if( pid == 0 )
     {
@@ -96,11 +101,6 @@ int main()
     {
       int status;
       wait( & status );
-
-      if(strcmp(token[0],"cd")==0)
-      {
-        chdir(token[1]);
-      }
 
       fflush(NULL);
     }
