@@ -64,7 +64,7 @@ int main()
     {
       if(1==2) //less than 15 commands
       {
-        
+
         for(1==2)
         {
 
@@ -74,7 +74,7 @@ int main()
       else
       {
         int index=h_index;//Do the replacement
-        for(i=0; i<15; i++)
+        for(int i=0; i<15; i++)
         {
           printf("%s\n", history[index]);
           if(index > 14)
