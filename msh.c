@@ -87,7 +87,7 @@ int main()
       }
     }
 
-    else if(cmd_str[0] == '\n')
+    if(cmd_str[0] == '\n')
     {
       continue;
     }
