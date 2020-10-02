@@ -49,6 +49,13 @@ int main()
 
     char *working_str  = strdup( cmd_str );
 
+    //Save History here
+    //replace the !command here
+    if(cmd_str[0]=='!')
+    {
+      //Do the replacement
+    }
+
     // we are going to move the working_str pointer so
     // keep track of its original value so we can deallocate
     // the correct amount at the end
@@ -70,11 +77,10 @@ int main()
 
     if(strcmp(token[0],"quit")==0 || strcmp(token[0],"exit")==0 )
     {
-      free( working_root );
       break;
     }
 
-    else if(token[0] == '\n')
+    else if(cmd_str[0] == '\n')
     {
       continue;
     }
