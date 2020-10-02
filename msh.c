@@ -72,7 +72,7 @@ int main()
 
 
 
-    if(&token[0] == '\n')
+    if(token[0] == '\n')
     {
       continue;
     }
@@ -92,7 +92,7 @@ int main()
     {
       printf("token[%d] = %s\n", token_index, token[token_index] );
     }
-    
+
     free( working_root );
 
   }
