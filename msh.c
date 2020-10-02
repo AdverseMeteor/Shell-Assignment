@@ -26,6 +26,10 @@ int main()
 
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
 
+  char* history[15]=(char*) malloc(MAX_COMMAND_SIZE); //Malloc and zero it out
+  memset(history[0], 0, MAX_COMMAND_SIZE);
+  int h_index;
+
   while( 1 )
   {
     // Print out the msh prompt
@@ -50,12 +54,38 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     //Save History here
+    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
+    if(h_index>14)
+    {
+      h_index=0;
+    }
     //replace the !command here
     if(cmd_str[0]=='!')
     {
-      //Do the replacement
+      if(atoi(cmd_str[0][1])<15) //less than 15 commands
+      {
+        int index=atoi(&token[0][1]);
+        strncpy(working_str, history[index],MAX_COMMAND_SIZE);
+        for()
+        {
+
+        }
+      }
+
+      else
+      {
+        int index=h_index;//Do the replacement
+        for(i=0; i<15; i++)
+        {
+          print("%s\n", history[index]);
+          if(index > 14)
+          {
+            index=0;
+          }
+        }
+      }
     }
-    
+
     else if(cmd_str[0] == '\n')
     {
       continue;
@@ -84,6 +114,11 @@ int main()
       break;
     }
 
+    else if(strcmp(token[0],"cd")==0)
+    {
+      chdir(token[1]);
+    }
+
     pid_t pid = fork( );
     if( pid == 0 )
     {
@@ -100,11 +135,6 @@ int main()
     {
       int status;
       wait( & status );
-
-      if(strcmp(token[0],"cd")==0)
-      {
-        chdir(token[1]);
-      }
 
       fflush(NULL);
     }
