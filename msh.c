@@ -74,6 +74,7 @@ int main()
 
     if(token[0] == '\n')
     {
+      free( working_root );
       continue;
     }
 
