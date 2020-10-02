@@ -67,12 +67,17 @@ int main()
     }
 
     // Now print the tokenized input as a debug check
-    if(token[0] == '\n')
+
+    int token_index  = 0;
+    for( token_index = 0; token_index < token_count; token_index ++ )
     {
-      continue;
+      printf("token[%d] = %s\n", token_index, token[token_index] );
     }
 
     free( working_root );
+
+    
+
   }
   return 0;
 }
