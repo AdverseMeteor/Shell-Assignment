@@ -68,6 +68,11 @@ int main()
 
     // Now print the tokenized input as a debug check
 
+    if(strcmp(token[0],"quit")==0 || strcmp(token[0],"exit")==0 )
+    {
+      break;
+    }
+
     pid_t pid = fork( );
     if( pid == 0 )
     {
