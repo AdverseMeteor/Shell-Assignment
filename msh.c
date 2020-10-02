@@ -53,38 +53,9 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     //Save History here
-    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
-    if(h_index>14)
-    {
-      h_index=0;
-    }
-    //replace the !command here
-    if(cmd_str[0]=='!')
-    {
-      if(1==2) //less than 15 commands
-      {
+    
 
-        for(int i=0;i<14;i++)
-        {
-
-        }
-      }
-
-      else
-      {
-        int index=h_index;//Do the replacement
-        for(int i=0; i<15; i++)
-        {
-          printf("%s\n", history[index]);
-          if(index > 14)
-          {
-            index=0;
-          }
-        }
-      }
-    }
-
-    else if(cmd_str[0] == '\n')
+    if(cmd_str[0] == '\n')
     {
       continue;
     }
