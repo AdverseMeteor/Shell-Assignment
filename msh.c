@@ -70,7 +70,13 @@ int main()
 
     if(strcmp(token[0],"quit")==0 || strcmp(token[0],"exit")==0 )
     {
+      free( working_root );
       break;
+    }
+
+    else if(token[0] == '\n')
+    {
+      continue;
     }
 
     pid_t pid = fork( );
