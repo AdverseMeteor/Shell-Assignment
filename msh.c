@@ -81,7 +81,7 @@ int main()
       if( ret == -1 )
       {
         printf("%s: Command not found.\n", token[0]);
-        fflush(NULL);
+        break;
       }
     }
 
