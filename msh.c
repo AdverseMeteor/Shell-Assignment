@@ -64,12 +64,12 @@ int main()
 
     if(cmd_str[0]=='!')
     {
-      int index = atoi(cmd_str[0][1]);
+      int index = atoi(&cmd_str[0][1]);
       if( index < 15)
       {
         for(int i=0;i<index;i++)
         {
-          printf("%s"\n, history[index])
+          printf("%s\n", history[index]);
         }
       }
 
