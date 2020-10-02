@@ -82,7 +82,13 @@ int main()
 
     if(strcmp(token[0],"cd")==0)
     {
-      chdir(token[1]);
+
+      int see = chdir(token[1]);
+
+      if( see == -1 )
+      {
+        
+      }
     }
 
     pid_t pid = fork( );
