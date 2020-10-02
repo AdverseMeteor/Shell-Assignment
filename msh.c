@@ -68,15 +68,26 @@ int main()
 
     // Now print the tokenized input as a debug check
 
-    int token_index  = 0;
-    for( token_index = 0; token_index < token_count; token_index ++ )
+
+
+
+
+    if(token[0] == '\n')
     {
-      printf("token[%d] = %s\n", token_index, token[token_index] );
+      continue;
+    }
+
+    if(strcmp(token[0],"cd")=0)
+    {
+      chdir(token[1]);
+    }
+
+    else
+    {
+
     }
 
     free( working_root );
-
-    
 
   }
   return 0;
