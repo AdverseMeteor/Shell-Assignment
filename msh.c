@@ -55,7 +55,11 @@ int main()
     {
       //Do the replacement
     }
-
+    
+    else if(cmd_str[0] == '\n')
+    {
+      continue;
+    }
     // we are going to move the working_str pointer so
     // keep track of its original value so we can deallocate
     // the correct amount at the end
@@ -78,11 +82,6 @@ int main()
     if(strcmp(token[0],"quit")==0 || strcmp(token[0],"exit")==0 )
     {
       break;
-    }
-
-    else if(cmd_str[0] == '\n')
-    {
-      continue;
     }
 
     pid_t pid = fork( );
