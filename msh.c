@@ -62,7 +62,7 @@ int main()
       h_index=0;
     }
 
-    if(cmd_str[0]=='!')
+    if(cmd_str[0]=='!' && 1+1==3)
     {
       int index = atoi(&token[0][1]);
       if( index < 15)
