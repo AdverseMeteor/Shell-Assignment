@@ -81,6 +81,7 @@ int main()
       if( ret == -1 )
       {
         printf("%s: Command not found.", token[0]);
+        continue;
       }
     }
 
