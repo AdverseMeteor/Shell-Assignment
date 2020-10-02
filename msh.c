@@ -65,7 +65,7 @@ int main()
       if(1==2) //less than 15 commands
       {
 
-        for(1==2)
+        for(int i=0;i<14;i++)
         {
 
         }
