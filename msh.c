@@ -77,7 +77,7 @@ int main()
       continue;
     }
 
-    if(strcmp(token[0],"cd")=0)
+    if(strcmp(token[0],"cd")==0)
     {
       chdir(token[1]);
     }
