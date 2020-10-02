@@ -26,12 +26,6 @@ int main()
 
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
 
-  char * history[15];//Malloc and zero it out
-  history[0] = (char*) malloc(MAX_COMMAND_SIZE);
-  memset(history[0], 0, MAX_COMMAND_SIZE);
-
-  int h_index;
-
   while( 1 )
   {
     // Print out the msh prompt
@@ -56,36 +50,7 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     //Save History here
-    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
-    if(h_index>14)
-    {
-      h_index=0;
-    }
 
-    if(cmd_str[0]=='!' && 1+1==3)
-    {
-      int index = atoi(&token[0][1]);
-      if( index < 15)
-      {
-        for(int i=0;i<index;i++)
-        {
-          printf("%s\n", history[index]);
-        }
-      }
-
-      else
-      {
-        index=h_index;
-        for(int i=0; i<15; i++)
-        {
-          printf("%s\n", history[index]);
-          if(index > 14)
-          {
-            index=0;
-          }
-        }
-      }
-    }
 
     if(cmd_str[0] == '\n')
     {
