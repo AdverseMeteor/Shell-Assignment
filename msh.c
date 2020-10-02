@@ -71,12 +71,8 @@ int main()
     pid_t pid = fork( );
     if( pid == 0 )
     {
-      if(strcmp(token[0],"cd")==0)
-      {
-        chdir(token[1]);
-      }
-      
       int ret = execvp( token[0], &token[0] );
+
       if( ret == -1 )
       {
         perror("execl failed: ");
@@ -87,6 +83,13 @@ int main()
     {
       int status;
       wait( & status );
+
+      if(strcmp(token[0],"cd")==0)
+      {
+        chdir(token[1]);
+      }
+
+      fflush(NULL);
     }
 
     int token_index  = 0;
