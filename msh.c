@@ -68,24 +68,20 @@ int main()
 
     // Now print the tokenized input as a debug check
 
-
-
-
-
-    if(token[0] == '\n')
+    pid_t pid = fork( );
+    if( pid == 0 )
     {
-      free( working_root );
-      continue;
-    }
-
-    if(strcmp(token[0],"cd")==0)
-    {
-      chdir(token[1]);
+      int ret = execvp( arguments[0], &arguments[0] );
+      if( ret == -1 )
+      {
+        perror("execl failed: ");
+      }
     }
 
     else
     {
-
+      int status;
+      wait( & status );
     }
 
     int token_index  = 0;
