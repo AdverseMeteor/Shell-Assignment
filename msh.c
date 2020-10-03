@@ -53,7 +53,7 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     //Save History here
-    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
+    
     if(cmd_str[0]=='!')
     {
 
