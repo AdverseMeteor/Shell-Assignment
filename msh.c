@@ -53,7 +53,12 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     //Save History here
-    
+    if(h_index>14)
+    {
+      h_index=0;
+    }
+
+
     if(cmd_str[0]=='!')
     {
 
