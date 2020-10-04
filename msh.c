@@ -96,9 +96,9 @@ int main()
 
     else if(strcmp(token[0],"showpids")==0)
     {
-      for(int i=0; i<5; i++)
+      for(int i=0; i<p_index; i++)
       {
-        printf("Pid[%d]: %d\n", i, p_id[i]);
+        printf("Pid[%d]: %d\n", (i+1), p_id[i]);
       }
 
       continue;
@@ -144,6 +144,7 @@ int main()
     }
 
     p_id[p_index]=getppid();
+    p_index++;
 
     free( working_root );
 
