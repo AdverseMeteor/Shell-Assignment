@@ -115,8 +115,6 @@ int main()
         printf("%s: Command not found.\n", token[0]);
         break;
       }
-
-      p_id[p_index]=getppid();
     }
 
     else
@@ -128,6 +126,8 @@ int main()
       {
         chdir(token[1]);
       }
+      
+      p_id[p_index]=getppid();
 
       fflush(NULL);
     }
@@ -142,7 +142,7 @@ int main()
     {
       p_index=0;
     }
-    
+
     p_index++;
 
     free( working_root );
