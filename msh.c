@@ -116,7 +116,7 @@ int main()
         break;
       }
 
-
+      p_id[p_index]=getppid();
     }
 
     else
@@ -142,8 +142,7 @@ int main()
     {
       p_index=0;
     }
-
-    p_id[p_index]=getppid();
+    
     p_index++;
 
     free( working_root );
