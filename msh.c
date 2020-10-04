@@ -128,7 +128,6 @@ int main()
         break;
       }
 
-      p_id[p_index]=getpid();
     }
 
     else
@@ -141,6 +140,8 @@ int main()
         chdir(token[1]);
       }
 
+      p_id[p_index]=getpid();
+      
       fflush(NULL);
     }
 
