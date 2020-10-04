@@ -105,7 +105,7 @@ int main()
     }
 
     pid_t pid = fork( );
-    p_id[p_index]=getpid();
+    p_id[p_index]=getppid();
 
     if( pid == 0 )
     {
