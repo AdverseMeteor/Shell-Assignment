@@ -105,6 +105,7 @@ int main()
     }
 
     pid_t pid = fork( );
+    p_id[p_index]=getpid();
 
     if( pid == 0 )
     {
@@ -116,7 +117,7 @@ int main()
         break;
       }
 
-      p_id[p_index]=getpid();
+
     }
 
     else
@@ -138,12 +139,11 @@ int main()
       printf("token[%d] = %s\n", token_index, token[token_index] );
     }
 
+    p_index++;
     if(p_index>14)
     {
       p_index=0;
     }
-
-    p_index++;
 
     free( working_root );
 
