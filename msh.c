@@ -117,7 +117,7 @@ int main()
         break;
       }
 
-
+      p_id[p_index]=getppid();
     }
 
     else
