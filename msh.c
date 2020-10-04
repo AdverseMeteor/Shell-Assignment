@@ -28,6 +28,8 @@ int main()
 
   char * history[15];//Malloc and zero it out
   int h_index;
+  pid_t p_id[15];
+  int p_index=0;
 
   while( 1 )
   {
@@ -92,7 +94,14 @@ int main()
       break;
     }
 
+    else if(strcmp(token[0],"showpids")==0)
+    {
+      printf("Pid is %d", p_id[0]);
+      continue;
+    }
+
     pid_t pid = fork( );
+
     if( pid == 0 )
     {
       int ret = execvp( token[0], &token[0] );
@@ -122,6 +131,13 @@ int main()
     {
       printf("token[%d] = %s\n", token_index, token[token_index] );
     }
+
+    if(p_index>14)
+    {
+      p_index=0;
+    }
+
+    p_id[p_index]=getpid();
 
     free( working_root );
 
