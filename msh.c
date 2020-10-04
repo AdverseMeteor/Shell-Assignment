@@ -96,7 +96,7 @@ int main()
 
     else if(strcmp(token[0],"showpids")==0)
     {
-      for(int i=0; i<p_index; i++)
+      for(int i=0; i<5; i++)
       {
         printf("Pid[%d]: %d\n", i, p_id[i]);
       }
@@ -115,7 +115,7 @@ int main()
         printf("%s: Command not found.\n", token[0]);
         break;
       }
-      
+
       if(p_index>14)
       {
         p_index=0;
