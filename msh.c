@@ -116,12 +116,7 @@ int main()
         break;
       }
 
-      if(p_index>14)
-      {
-        p_index=0;
-      }
 
-      p_id[p_index]=getppid();
     }
 
     else
@@ -143,6 +138,12 @@ int main()
       printf("token[%d] = %s\n", token_index, token[token_index] );
     }
 
+    if(p_index>14)
+    {
+      p_index=0;
+    }
+
+    p_id[p_index]=getppid();
 
     free( working_root );
 
