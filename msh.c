@@ -98,7 +98,7 @@ int main()
     {
       for(int i=0; i<p_index; i++)
       {
-        printf("Pid[%d]: %d\n", (i+1), p_id[i]);
+        printf("%d: %d\n", i, p_id[i]);
       }
 
       continue;
