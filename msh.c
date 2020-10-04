@@ -66,7 +66,7 @@ int main()
 
     }
 
-    if(cmd_str[0] == '\n')
+    if(cmd_str[0] == '\n' || cmd_str[0] == ' ')
     {
       continue;
     }
