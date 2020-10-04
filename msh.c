@@ -96,7 +96,11 @@ int main()
 
     else if(strcmp(token[0],"showpids")==0)
     {
-      printf("Pid is %d", p_id[0]);
+      for(int i=0;i<p_index;i++)
+      {
+        printf("Pid[%d]: %d\n", i, p_id[i]);
+      }
+
       continue;
     }
 
