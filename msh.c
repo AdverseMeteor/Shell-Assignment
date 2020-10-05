@@ -175,7 +175,7 @@ int main()
         chdir(token[1]);
       }
 
-      p_id[index]=getpid(); //We get our pid and store into our array in order
+      p_id[index]=getppid(); //We get our pid and store into our array in order
                             //to print it for later
       fflush(NULL);
     }
