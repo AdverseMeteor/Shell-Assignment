@@ -70,7 +70,7 @@ int main()
 
     if(cmd_str[0]=='!')
     {
-      int tuff = atoi(&cmd_str[0][1]);
+      int tuff = atoi(&cmd_str[1]);
       strncpy(working_str, history[tuff], 255);
     }
 
