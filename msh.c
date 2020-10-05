@@ -145,6 +145,7 @@ int main()
         }
 
       }
+      free( working_root );
       continue;
     }
 
