@@ -132,16 +132,10 @@ int main()
       }
       else
       {
-        int trace=h_index;
         for(int i=0; i<15; i++)
         {
-          printf("%s\n", history[trace]);
-          if(trace > 14)
-          {
-            trace=0;
-          }
+          printf("%d: %s\n", i, history[i]);
         }
-
       }
       continue;
     }
