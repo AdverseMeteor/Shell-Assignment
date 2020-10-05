@@ -142,6 +142,7 @@ int main()
           {
             trace=0;
           }
+          trace++;
         }
 
       }
