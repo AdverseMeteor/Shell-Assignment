@@ -129,13 +129,20 @@ int main()
         {
           printf("%d: %s\n", i, history[i]);
         }
+        printf("%d: %history\n", i+1);
       }
       else
       {
+        int trace=h_index;
         for(int i=0; i<15; i++)
         {
-          printf("%d: %s\n", i, history[i]);
+          printf("%d: %s\n", i, history[trace]);
+          if(trace>14)
+          {
+            trace=0;
+          }
         }
+
       }
       continue;
     }
@@ -167,12 +174,6 @@ int main()
       p_id[index]=getpid();
 
       fflush(NULL);
-    }
-
-    int token_index  = 0;
-    for( token_index = 0; token_index < token_count; token_index ++ )
-    {
-      printf("token[%d] = %s\n", token_index, token[token_index] );
     }
 
     index++;
