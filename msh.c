@@ -28,8 +28,10 @@ int main()
 
   char * history[15];//Malloc and zero it out
   int h_index=0;
+
   pid_t p_id[15];
   int p_index=0;
+
   int counter=0;
 
   while( 1 )
@@ -141,7 +143,7 @@ int main()
       }
 
       p_id[p_index]=getpid();
-      
+
       fflush(NULL);
     }
 
