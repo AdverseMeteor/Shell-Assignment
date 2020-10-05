@@ -63,6 +63,11 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
+    if(h_index>14)
+    {
+      h_index=0;
+    }
+    
     if(cmd_str[0]=='!')
     {
       int tuff = atoi(&token[0][1]);
