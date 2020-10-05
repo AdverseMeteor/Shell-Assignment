@@ -67,7 +67,7 @@ int main()
     {
       h_index=0;
     }
-    
+
     if(cmd_str[0]=='!')
     {
       int tuff = atoi(&token[0][1]);
@@ -132,10 +132,16 @@ int main()
       }
       else
       {
+        trace=h_index;
         for(int i=0; i<15; i++)
         {
-          printf("%d: %s\n", i, history[i]);
+          printf("%s\n", history[trace]);
+          if(trace > 14)
+          {
+            trace=0;
+          }
         }
+
       }
       continue;
     }
