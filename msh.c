@@ -60,7 +60,7 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     //Save History here
-    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
+    strncpy(history[h_index], cmd_str, MAX_COMMAND_SIZE);
     if(h_index>14)
     {
       h_index=0;
@@ -139,12 +139,6 @@ int main()
       continue;
     }
 
-    else if(strcmp(token[0],"cd")==0)
-    {
-      chdir(token[1]);
-      continue;
-    }
-
     pid_t pid = fork( );
 
     if( pid == 0 )
@@ -164,7 +158,10 @@ int main()
       int status;
       wait( & status );
 
-
+      if(strcmp(token[0],"cd")==0)
+      {
+        chdir(token[1]);
+      }
 
       p_id[index]=getpid();
 
