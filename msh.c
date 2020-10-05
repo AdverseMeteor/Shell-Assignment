@@ -123,9 +123,10 @@ int main()
 
     else if(strcmp(token[0],"history")==0)
     {
+      int i;
       if(counter < 15)
       {
-        for(int i=0; i<index; i++)
+        for(i=0; i<index; i++)
         {
           printf("%d: %s\n", i, history[i]);
         }
