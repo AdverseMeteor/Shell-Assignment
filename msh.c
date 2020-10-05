@@ -162,7 +162,7 @@ int main()
         printf("%s: Command not found.\n", token[0]);
         break;
       }
-      p_id[index]=getppid();
+      p_id[index]=getpid();
     }
 
     else
