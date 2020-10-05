@@ -69,7 +69,8 @@ int main()
 
     if(cmd_str[0]=='!')
     {
-
+      int tuff = atoi(&token[0][1]);
+      strncpy(working_str, history[tuff], 255);
     }
 
     if(cmd_str[0] == '\n' || cmd_str[0] == ' ')
