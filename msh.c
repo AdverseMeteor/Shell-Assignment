@@ -71,7 +71,7 @@ int main()
     if(cmd_str[0]=='!')
     {
       int tuff = atoi(&cmd_str[1]);
-      strncpy(working_str, history[0], 255);
+      strncpy(working_str, history[tuff], 255);
     }
 
     if(cmd_str[0] == '\n' || cmd_str[0] == ' ')
