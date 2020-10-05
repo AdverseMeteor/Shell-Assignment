@@ -60,7 +60,7 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     //Save History here
-
+    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
     if(h_index>14)
     {
       h_index=0;
