@@ -126,7 +126,7 @@ int main()
       int i;
       if(counter < 15)
       {
-        for(i=0; i<index; i++)
+        for(i=0; i<=index; i++)
         {
           printf("%d: %s\n", i, history[i]);
         }
