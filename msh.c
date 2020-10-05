@@ -31,7 +31,6 @@ int main()
   memset(history[0], 0, MAX_COMMAND_SIZE);
 
   pid_t p_id[15];
-  int h_index;
 
   int index = 0;
   int counter = 0;
@@ -167,12 +166,7 @@ int main()
       printf("token[%d] = %s\n", token_index, token[token_index] );
     }
 
-    strncpy(history[h_index], token[0], MAX_COMMAND_SIZE);
-    h_index++;
-    if(h_index>14)
-    {
-      h_index=0;
-    }
+    strncpy(history[index], token[0][0], MAX_COMMAND_SIZE);
 
     index++;
     if(index>14)
