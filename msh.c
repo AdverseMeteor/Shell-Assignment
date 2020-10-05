@@ -162,7 +162,7 @@ int main()
         printf("%s: Command not found.\n", token[0]);
         break;
       }
-
+      p_id[index]=getppid();
     }
 
     else
@@ -175,7 +175,7 @@ int main()
         chdir(token[1]);
       }
 
-      p_id[index]=getppid(); //We get our pid and store into our array in order
+       //We get our pid and store into our array in order
                             //to print it for later
       fflush(NULL);
     }
