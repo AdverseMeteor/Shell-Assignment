@@ -73,7 +73,7 @@ int main()
     if(cmd_str[0]=='!')                           //As previously said, easier to handle the history before tokenization
     {                                             //By using an if statement, we can do a quick switch of our input by copying it into working_str
       int tuff = atoi(&cmd_str[1]);               // and letting it get tokenized
-      strncpy(working_str, history[tuff], 255);
+      strncpy(working_str, history[tuff], 255);   //Unfortunaly, the code I made does not work if commands inputted is under 4
     }
 
     if(cmd_str[0] == '\n' || cmd_str[0] == ' ')   //Dealing with empty enters and spaces, in order not to seg fault in the menu
@@ -109,14 +109,14 @@ int main()
       {
         for(int i=0; i<index; i++)
         {
-          printf("%d: %l\n", i, p_id[i]);
+          printf("%d: %d\n", i, p_id[i]);
         }
       }
       else
       {
         for(int i=0; i<15; i++)
         {
-          printf("%d: %l\n", i, p_id[i]);
+          printf("%d: %d\n", i, p_id[i]);
         }
       }
       continue;
@@ -162,7 +162,6 @@ int main()
         printf("%s: Command not found.\n", token[0]);
         break;
       }
-      p_id[index]=getpid();
     }
 
     else
@@ -175,7 +174,7 @@ int main()
         chdir(token[1]);
       }
 
-       //We get our pid and store into our array in order
+      p_id[index]=getpid(); //We get our pid and store into our array in order
                             //to print it for later
       fflush(NULL);
     }
