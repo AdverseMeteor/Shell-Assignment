@@ -24,20 +24,21 @@
 int main()
 {
 
-  char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
-
-  char * history[15];//Malloc and zero it out
-  for(int i=0; i<15; i++)
+  char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE ); //We need to start with getting our varaibles sorted with.
+                                                      //We make a history array for saving our commands later
+  char * history[15];
+  for(int i=0; i<15; i++) //We need to malloc and zero out the uninitalized array to use it.
   {
     history[i] = (char*) malloc(MAX_COMMAND_SIZE);
     memset(history[i], 0, MAX_COMMAND_SIZE);
   }
   int h_index;
 
-  pid_t p_id[15];
+  pid_t p_id[15];     //A pid array to save our pids.
 
   int index = 0;
-  int counter = 0;
+  int counter = 0; //Found it useful to keep track for how many iterations had happened in the program.
+                  //It allows us to tell whether the arrays were max out or growing
 
   while( 1 )
   {
@@ -62,22 +63,24 @@ int main()
 
     char *working_str  = strdup( cmd_str );
 
-    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
+    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE); //In order to print out the history array, we save the commands before it goes into tokens
+                                                            //We also need to keep track for the individaul index for history as the program goes on.
     if(h_index>14)
     {
       h_index=0;
     }
 
-    if(cmd_str[0]=='!')
-    {
-      int tuff = atoi(&cmd_str[1]);
+    if(cmd_str[0]=='!')                           //As previously said, easier to handle the history before tokenization
+    {                                             //By using an if statement, we can do a quick switch of our input by copying it into working_str
+      int tuff = atoi(&cmd_str[1]);               // and letting it get tokenized
       strncpy(working_str, history[tuff], 255);
     }
 
-    if(cmd_str[0] == '\n' || cmd_str[0] == ' ')
+    if(cmd_str[0] == '\n' || cmd_str[0] == ' ')   //Dealing with empty enters and spaces, in order not to seg fault in the menu
     {
       continue;
     }
+
     // we are going to move the working_str pointer so
     // keep track of its original value so we can deallocate
     // the correct amount at the end
@@ -95,15 +98,13 @@ int main()
         token_count++;
     }
 
-    // Now print the tokenized input as a debug check
-
-    if(strcmp(token[0],"quit")==0 || strcmp(token[0],"exit")==0 )
+    if(strcmp(token[0],"quit")==0 || strcmp(token[0],"exit")==0 ) //Very self-explanotory, this if statement will be our loop breaker
     {
       break;
     }
 
-    else if(strcmp(token[0],"showpids")==0)
-    {
+    else if(strcmp(token[0],"showpids")==0) //Using our counter from before, we separate the print based on array length
+    {                                       //Allows us to print each pid stored within our array
       if(counter < 15)
       {
         for(int i=0; i<index; i++)
@@ -121,10 +122,10 @@ int main()
       continue;
     }
 
-    else if(strcmp(token[0],"history")==0)
-    {
-      int i;
-      if(counter < 15)
+    else if(strcmp(token[0],"history")==0)    //The portion for printing history is almost exactly
+    {                                         //the same as the showpids
+      int i;                                  //The only difference is that it prints the history array
+      if(counter < 15)                        //(where we store our commands) instead
       {
         for(i=0; i<=index; i++)
         {
@@ -145,13 +146,14 @@ int main()
         }
 
       }
-      free( working_root );
-      continue;
+      free( working_root );       //Free the working_root because the loop will
+      continue;                   //continue up to the beginning without clearing it first
+                                  //so it is done here before it goes
     }
 
-    pid_t pid = fork( );
-
-    if( pid == 0 )
+    pid_t pid = fork( );          //Our main driver of the shell
+                                 //We fork to create the child in which it will
+    if( pid == 0 )               //we turned into a different process using exec
     {
       int ret = execvp( token[0], &token[0] );
 
@@ -165,21 +167,21 @@ int main()
 
     else
     {
-      int status;
-      wait( & status );
-
-      if(strcmp(token[0],"cd")==0)
-      {
+      int status;           //make the parent wait while the child is doing its thing
+      wait( & status );     //The shell will keep forking new processes everytime
+                            //A command is entered, but some commands are not built in
+      if(strcmp(token[0],"cd")==0) //The change directory has to be implemented because
+      {                             //it was not bulit in originally
         chdir(token[1]);
       }
 
-      p_id[index]=getpid();
-
+      p_id[index]=getpid(); //We get our pid and store into our array in order
+                            //to print it for later
       fflush(NULL);
     }
 
-    index++;
-    if(index>14)
+    index++;              //Increment our counters and indexes before we
+    if(index>14)          //proceed back up to the loop
     {
       index=0;
     }
