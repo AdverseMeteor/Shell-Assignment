@@ -167,7 +167,7 @@ int main()
       printf("token[%d] = %s\n", token_index, token[token_index] );
     }
 
-
+    h_index++;
     index++;
     if(index>14)
     {
