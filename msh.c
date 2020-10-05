@@ -130,7 +130,7 @@ int main()
         {
           printf("%d: %s\n", i, history[i]);
         }
-        printf("%d: %history\n", index+1);
+        printf("%d: history\n", index+1);
       }
       else
       {
