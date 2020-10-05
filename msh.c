@@ -113,7 +113,11 @@ int main()
           printf("%d: %d\n", i, p_id[i]);
         }
       }
+      continue;
+    }
 
+    else if(strcmp(token[0],"history")==0)
+    {
 
       continue;
     }
