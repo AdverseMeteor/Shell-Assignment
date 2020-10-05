@@ -139,6 +139,12 @@ int main()
       continue;
     }
 
+    else if(strcmp(token[0],"cd")==0)
+    {
+      chdir(token[1]);
+      continue;
+    }
+
     pid_t pid = fork( );
 
     if( pid == 0 )
@@ -158,10 +164,7 @@ int main()
       int status;
       wait( & status );
 
-      if(strcmp(token[0],"cd")==0)
-      {
-        chdir(token[1]);
-      }
+
 
       p_id[index]=getpid();
 
