@@ -26,10 +26,13 @@ int main()
 
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
 
-  char * history[15];
+  char * history[15];//Malloc and zero it out
+  history[0] = (char*) malloc(MAX_COMMAND_SIZE);
+  memset(history[0], 0, MAX_COMMAND_SIZE);
   int h_index;
 
   pid_t p_id[15];
+
   int index = 0;
   int counter = 0;
 
