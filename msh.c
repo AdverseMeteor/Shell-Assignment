@@ -59,13 +59,6 @@ int main()
 
     char *working_str  = strdup( cmd_str );
 
-    //Save History here
-    strncpy(history[h_index], cmd_str, MAX_COMMAND_SIZE);
-    if(h_index>14)
-    {
-      h_index=0;
-    }
-
 
     if(cmd_str[0]=='!')
     {
@@ -172,6 +165,13 @@ int main()
     for( token_index = 0; token_index < token_count; token_index ++ )
     {
       printf("token[%d] = %s\n", token_index, token[token_index] );
+    }
+
+    strncpy(history[h_index], token[0], MAX_COMMAND_SIZE);
+    h_index++;
+    if(h_index>14)
+    {
+      h_index=0;
     }
 
     index++;
