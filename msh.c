@@ -27,12 +27,11 @@ int main()
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
 
   char * history[15];//Malloc and zero it out
-  int h_index=0;
-
   pid_t p_id[15];
-  int p_index=0;
+  int h_index;
 
-  int counter=0;
+  int index = 0;
+  int counter = 0;
 
   while( 1 )
   {
@@ -101,7 +100,7 @@ int main()
     {
       if(counter < 15)
       {
-        for(int i=0; i<p_index; i++)
+        for(int i=0; i<index; i++)
         {
           printf("%d: %d\n", i, p_id[i]);
         }
@@ -118,7 +117,20 @@ int main()
 
     else if(strcmp(token[0],"history")==0)
     {
-
+      if(counter < 15)
+      {
+        for(int i=0; i<index; i++)
+        {
+          printf("%d: %s\n", i, history[i]);
+        }
+      }
+      else
+      {
+        for(int i=0; i<15; i++)
+        {
+          printf("%d: %s\n", i, history[i]);
+        }
+      }
       continue;
     }
 
@@ -157,10 +169,10 @@ int main()
       printf("token[%d] = %s\n", token_index, token[token_index] );
     }
 
-    p_index++;
-    if(p_index>14)
+    index++;
+    if(index>14)
     {
-      p_index=0;
+      index=0;
     }
 
     free( working_root );
