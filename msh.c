@@ -158,7 +158,7 @@ int main()
         chdir(token[1]);
       }
 
-      p_id[p_index]=getpid();
+      p_id[index]=getpid();
 
       fflush(NULL);
     }
