@@ -19,20 +19,17 @@
 
 #define MAX_COMMAND_SIZE 255    // The maximum command-line size
 
-#define MAX_NUM_ARGUMENTS 11     // Mav shell only supports five arguments
+#define MAX_NUM_ARGUMENTS 11     // Mav shell only supports 11 arguments
 
 int main()
 {
 
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
 
-  char * history[15];//Malloc and zero it out
-  history[0] = (char*) malloc(MAX_COMMAND_SIZE);
-
+  char * history[15];
   int h_index;
 
   pid_t p_id[15];
-
   int index = 0;
   int counter = 0;
 
