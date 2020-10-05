@@ -29,6 +29,7 @@ int main()
   char * history[15];//Malloc and zero it out
   history[0] = (char*) malloc(MAX_COMMAND_SIZE);
   memset(history[0], 0, MAX_COMMAND_SIZE);
+  int h_index;
 
   pid_t p_id[15];
 
@@ -58,7 +59,7 @@ int main()
 
     char *working_str  = strdup( cmd_str );
 
-    strncpy(history[index], cmd_str, MAX_COMMAND_SIZE);
+    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
     if(cmd_str[0]=='!')
     {
       int tuff = atoi(&token[0][1]);
