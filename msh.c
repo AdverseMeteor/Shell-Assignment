@@ -59,7 +59,7 @@ int main()
 
     char *working_str  = strdup( cmd_str );
 
-    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
+    strncpy(history[h_index++], cmd_str, 2);
     if(cmd_str[0]=='!')
     {
       int tuff = atoi(&token[0][1]);
@@ -167,7 +167,6 @@ int main()
       printf("token[%d] = %s\n", token_index, token[token_index] );
     }
 
-    h_index++;
     index++;
     if(index>14)
     {
