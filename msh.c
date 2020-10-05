@@ -27,6 +27,7 @@ int main()
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
 
   char * history[15];//Malloc and zero it out
+  memset(history[0], 0, MAX_COMMAND_SIZE);
   pid_t p_id[15];
   int h_index;
 
@@ -57,7 +58,7 @@ int main()
     char *working_str  = strdup( cmd_str );
 
     //Save History here
-    strncpy(history[h_index++], cmd_str, MAX_COMMAND_SIZE);
+
     if(h_index>14)
     {
       h_index=0;
