@@ -109,14 +109,14 @@ int main()
       {
         for(int i=0; i<index; i++)
         {
-          printf("%d: %d\n", i, p_id[i]);
+          printf("%d: %lun\n", i, p_id[i]);
         }
       }
       else
       {
         for(int i=0; i<15; i++)
         {
-          printf("%d: %d\n", i, p_id[i]);
+          printf("%d: %lun\n", i, p_id[i]);
         }
       }
       continue;
